@@ -9,7 +9,6 @@ from PIL import Image
 import glob, os
 from getch import pause
 from GPSPhoto import gpsphoto
-#import exifread
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -27,22 +26,15 @@ def search():
         if Image: 
             try:
                 img = Image.open(file)
-                
-                # Get the data from image file and return a dictionary
                 data = gpsphoto.getGPSData(file)
-                print('in file', file, 'GPS tag was founded: ', data['Latitude'], data['Longitude'])
-            
-#                tags = exifread.process_file(open(file, 'rb'))                                              
-#                geo = {i:tags[i] for i in tags.keys() if i.startswith('GPS')}  
-#                print('in file', file, 'find GEO ', geo)
-                
+                print('in file', file, 'GPS tag was founded: ', data['Latitude'], data['Longitude']) 
             except:
                 pass
 
 
 def main():
     cls()
-    print('\nfind from exif \nand print GPS tags \nfrom directory photos\n ')
+    print('\n find from exif \n and print GPS tags \n from directory photos \n ')
     pause('Press Any Key To continue')
     search()
 
