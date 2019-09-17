@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# packet-image-resize
+# find-geo-tags
 # Поиск и вывод на экран GPS геотэгов из изображений в текущей директории.
 # 
 
